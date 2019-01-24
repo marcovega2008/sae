@@ -1,0 +1,634 @@
+<div class="container-fluid">
+    <div class="form-group row">
+        <div style="width: 100%; text-align:center;">
+            <div>
+                <button type="button" class="btn btn-primary" (click)="imprimir()">
+                    <span class="fa fa-print"></span>&nbsp;Imprimir
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12"style="background: white; border: 1px #D3D3D3 solid; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);" >
+            <div #encabezadoFormularioIngles class="row m-2">
+                <div class="col-11">
+                    <div class="form-group row">
+                        <div class="col-12 text-right">
+                            <ngx-barcode
+                                [bc-value]="barcode"
+                                [bc-display-value]="true"
+                            ></ngx-barcode>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img
+                                alt="INSTITUTOS SUPERIORES TÉCNICOS Y TECNOLÓGICOS"
+                                height="38px"
+                                src="assets/images/logos/senescyt.png"
+                            />
+                        </div>
+                        <div class="col-6 text-center">
+                                <h4>INSTITUTOS SUPERIORES TÉCNICOS Y TECNOLÓGICOS</h4>
+                            <div class="col-12 text-center mt-4">
+                                 <h4><strong>MATRICULA CURSOS DE
+                                    CAPACITACIÓN CONTINUA</strong></h4>
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+                                <img alt="INSTITUTOS SUPERIORES TÉCNICOS Y TECNOLÓGICOS" height="75px"
+                                     src="assets/images/logos/institutos.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div #cuerpoFormularioInglesPG1 class="row m-2">
+                <div class="col-11">
+                    <table class="table table-bordered">
+                       <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Nombre del Curso:</strong
+                                            ></label>
+                                            <!-- {{ personaLogeada.telefonoCelular}} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong>Horario Escogido:</strong></label
+                                        >
+                                        <!--{{ personaLogeada.apellido2 }}-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                              <td colspan="3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="col-form-label"
+                                                ><strong>Modalidad:</strong></label
+                                            >
+                                            <label class="radio-inline"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 1"
+                                                    disabled
+                                                />Presencial</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 2"
+                                                    disabled
+                                                />Dual</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 3"
+                                                    disabled
+                                                />Semipresencial</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 4"
+                                                    disabled
+                                                />Distancia</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 5"
+                                                    disabled
+                                                />Virtual</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="modalidad"
+                                                    [checked]="personaLogeada.idGenero == 6"
+                                                    disabled
+                                                />Presencial y Virtual</label
+                                            >
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12 text-center mt-4">
+                                        <h4>
+                                            <strong>DATOS PERSONALES</strong>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Apellidos y Nombres:</strong
+                                            ></label
+                                        >
+                                        {{ personaLogeada.apellido1 }}&nbsp;{{
+                                            personaLogeada.apellido2
+                                        }}&nbsp;{{
+                                            personaLogeada.nombre1
+                                        }}&nbsp;{{ personaLogeada.nombre2 }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Cédula de Ciudadania:</strong
+                                            ></label>
+                                        {{ personaLogeada.identificacion }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                   <div class="row">
+                                        <div class="col-12">
+                                            <label class="col-form-label"
+                                                ><strong
+                                                    >Fecha de Nacimiento
+                                                    (Año-Mes-Día):</strong
+                                                ></label
+                                            >
+                                            {{
+                                                personaLogeada.fechaNacimiento
+                                                    | date: "yyyy-MM-dd"
+                                            }}
+                                        </div>
+                                    </div>
+                            </td>
+                           </tr>
+                           <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong>Género:</strong></label
+                                        >
+                                        <label class="radio-inline"
+                                            ><input
+                                                type="radio"
+                                                name="genero"
+                                                [checked]="
+                                                    personaLogeada.idGenero == 1
+                                                "
+                                                disabled
+                                            />Masculino</label
+                                        >
+                                        <label class="radio-inline ml-2"
+                                            ><input
+                                                type="radio"
+                                                name="genero"
+                                                [checked]="
+                                                    personaLogeada.idGenero == 2
+                                                "
+                                                disabled
+                                            />Femenino</label
+                                        >
+                                        <label class="radio-inline ml-2"
+                                        ><input
+                                            type="radio"
+                                            name="genero"
+                                            [checked]="
+                                                personaLogeada.idGenero == 3
+                                            "
+                                            disabled
+                                        />Otros</label
+                                    >
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td colspan="3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="col-form-label"
+                                                ><strong
+                                                    >Étnia:</strong
+                                                ></label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        !(
+                                                            personaLogeada.idEtnia ==
+                                                                4 ||
+                                                            personaLogeada.idEtnia ==
+                                                                29 ||
+                                                            personaLogeada.idEtnia ==
+                                                                30 ||
+                                                            personaLogeada.idEtnia ==
+                                                                5 ||
+                                                            personaLogeada.idEtnia ==
+                                                                26 ||
+                                                            personaLogeada.idEtnia ==
+                                                                27 ||
+                                                            personaLogeada.idEtnia ==
+                                                                31
+                                                        )
+                                                    "
+                                                    disabled
+                                                />Indígena</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 4
+                                                    "
+                                                    disabled
+                                                />Afroecuatoriano</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 29
+                                                    "
+                                                    disabled
+                                                />Negro</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 30
+                                                    "
+                                                    disabled
+                                                />Mulato</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 5
+                                                    "
+                                                    disabled
+                                                />Montuvio</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 26
+                                                    "
+                                                    disabled
+                                                />Mestizo</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 27
+                                                    "
+                                                    disabled
+                                                />Blanco</label
+                                            >
+                                            <label class="radio-inline ml-2"
+                                                ><input
+                                                    type="radio"
+                                                    name="etnia"
+                                                    [checked]="
+                                                        personaLogeada.idEtnia == 31
+                                                    "
+                                                    disabled
+                                                />Otro</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label class="col-form-label"
+                                                        ><strong
+                                                            >Dirección Domiciliaria:</strong
+                                                        ></label
+                                                    >
+                                                    {{ personaLogeada.direccionDomicilio }}
+                                                </div>
+                                            </div>
+                                        </td>
+                            </tr>
+                            <tr>
+                                    <td colspan="2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                    <label class="col-form-label"
+                                                    ><strong>Nro.Telefónico Convencional</strong
+                                                    ></label>
+                                                {{ personaLogeada.telefonoDomicilio }}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                           <div class="row">
+                                                <div class="col-12">
+                                                        <label class="col-form-label"
+                                                        ><strong>Nro.Telefónico Celular:</strong
+                                                        ></label>
+                                                           {{ personaLogeada.telefonoCelular }}
+                                                </div>
+                                            </div>
+                                    </td>
+                             </tr>
+                             <tr>
+                                    <td colspan="3">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label class="col-form-label"
+                                                        ><strong
+                                                            >Correo Electrónico:</strong
+                                                        ></label
+                                                    >
+                                                    {{
+                                                        personaLogeada.correoElectronicoInstitucional
+                                                    }}
+                                                </div>
+                                            </div>
+                                        </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label class="col-form-label"
+                                                    ><strong>Nivel de Instrucción:</strong></label
+                                                >
+                                                <label class="radio-inline"
+                                                    ><input
+                                                        type="radio"
+                                                        name="genero"
+                                                        [checked]="
+                                                            personaLogeada.idGenero == 1
+                                                        "
+                                                        disabled
+                                                    />Primaria</label
+                                                >
+                                                <label class="radio-inline ml-2"
+                                                    ><input
+                                                        type="radio"
+                                                        name="genero"
+                                                        [checked]="
+                                                            personaLogeada.idGenero == 2
+                                                        "
+                                                        disabled
+                                                    />Secundaria</label
+                                                >
+                                                <label class="radio-inline"
+                                                    ><input
+                                                        type="radio"
+                                                        name="genero"
+                                                        [checked]="
+                                                            personaLogeada.idGenero == 3
+                                                        "
+                                                        disabled
+                                                    />Superior</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </td>
+                            </tr>
+                             <tr>
+                                        <td colspan="3">
+                                            <div class="row">
+                                                <div class="col-12 text-center mt-4">
+                                                    <h4>
+                                                        <strong>INFORMACION LABORAL</strong>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </td>
+                            </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Empresa donde trabaja:</strong
+                                            ></label
+                                        >
+                                        <!-- {{ personaLogeada.apellido1 }} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Dirección de la empresa:</strong
+                                            ></label
+                                        >
+                                        <!-- {{ personaLogeada.apellido1 }} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Correo electrónico de la empresa:</strong
+                                            ></label
+                                        >
+                                        <!-- {{ personaLogeada.apellido1 }} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="col-form-label"
+                                            ><strong
+                                                >Número telefónico de la empresa:</strong
+                                            ></label
+                                        >
+                                        <!-- {{ personaLogeada.apellido1 }} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="col-form-label"
+                                                ><strong
+                                                    >Actividad de la empresa:</strong
+                                                ></label
+                                            >
+                                            <!-- {{ personaLogeada.apellido1 }} -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label class="col-form-label"
+                                                    ><strong>¿El curso es auspiciado por la empresa?:</strong></label
+                                                >
+                                                <label class="radio-inline"
+                                                    ><input
+                                                        type="radio"
+                                                        name="genero"
+                                                        [checked]="
+                                                            personaLogeada.idGenero == 1
+                                                        "
+                                                        disabled
+                                                    />SI</label
+                                                >
+                                                <label class="radio-inline ml-2"
+                                                    ><input
+                                                        type="radio"
+                                                        name="genero"
+                                                        [checked]="
+                                                            personaLogeada.idGenero == 2
+                                                        "
+                                                        disabled
+                                                    />NO</label
+                                                >
+                                            </div>
+                                        </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td colspan="3">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label class="col-form-label"
+                                                        ><strong
+                                                            >Si está auspiciado, indique el nombre de contacto:</strong></label
+                                                    >
+                                                    <!-- {{ personaLogeada.apellido1 }} -->
+                                            </div>
+                                     </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td colspan="3">
+                                               <div class="row">
+                                                   <div class="col-12">
+                                                       <label class="col-form-label"
+                                                           ><strong
+                                                               >¿Cómo se enteró del curso?</strong></label
+                                                       >
+                                                       <!-- {{ personaLogeada.apellido1 }} -->
+                                               </div>
+                                        </div>
+                                   </td>
+                             </tr>
+                             <tr>
+                                    <td colspan="3">
+                                               <div class="row">
+                                                   <div class="col-12">
+                                                       <label class="col-form-label"
+                                                           ><strong
+                                                               >¿Qué otros cursos le gustaría seguir?</strong></label
+                                                       >
+                                                       <!-- {{ personaLogeada.apellido1 }} -->
+                                               </div>
+                                        </div>
+                                   </td>
+                             </tr>
+                             <tr>
+                                <td colspan="2">
+                                            <div class="row">
+                                                <div class="col-12" style="border-style: none none solid none;">
+                                                   <strong>Firma del Solicitante:</strong>
+                                                   <div style="width: 100%; height: 55px; float:right;"></div>
+                                                </div>
+                                            </div>
+                                    </td>
+                                <td colspan="2">
+                                                <div class="row">
+                                                    <div class="col-12" style="border-style: none none solid none;">
+                                                       <strong>Nombre del responsable del registro:</strong>
+                                                       <div style="width: 100%; height: 55px; float:right;"></div>
+                                                    </div>
+                                            </div>
+                                    </td>
+                                 </tr>
+                         </table>
+                   </div>
+             </div>
+             <div #pieFormularioCursosPG2 class="row">
+                    <div class="col-11">
+                        <div class="row mt-4">
+                            <div class="col-10"></div>
+                            <div class="col-2 text-right">
+                                Página 1 de 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="row">
+        <div class="col-12 m-2">
+            <div class="form-group row">
+                <div style="width: 100%; text-align:center;">
+                    <div>
+                        <button type="button" class="btn btn-primary" (click)="imprimir()">
+                            <span class="fa fa-print"></span>&nbsp;Imprimir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
